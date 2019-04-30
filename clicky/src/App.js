@@ -1,25 +1,40 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from "react";
+import Navbar from "./components/Navbar";
+import Jumbotron from "./components/Jumbotron";
+import Card from "./components/Card";
+import cards from "./cards.json";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+class App extends Component {
+  // Setting this.state.cards to the cards json array
+  state = {
+    cards,
+    score: 0,
+    highscore: 0
+  };
+
+  render() {
+    return (
+      <div>
+        <Navbar 
+          score={this.state.score}
+          highscore={this.state.highscore}
+        />
+        <Jumbotron />
+        <div className="wrapper">
+          {this.state.cards.map(card => (
+            <Card
+              imageClick={this.imageClick}
+              id={cards.id}
+              key={cards.id}
+              image={cards.image}
+            />
+          ))}
+        </div>
         
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
