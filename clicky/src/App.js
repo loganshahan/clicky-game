@@ -22,7 +22,7 @@ class App extends Component {
         />
         <Jumbotron />
         <div className="wrapper">
-          {this.state.cards.map(card => (
+          {this.state.cards.map(cards => (
             <Card
               imageClick={this.imageClick}
               id={cards.id}

@@ -1,0 +1,15 @@
+.navbar{
+width: 100%;
+  font-size: 24px;
+  background-color: green;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.slogan{
+    float: left;
+    color: white;
+}
+.scores{
+    float: right;
+    color: white;
+}
